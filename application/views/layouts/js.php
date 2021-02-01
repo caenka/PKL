@@ -35,6 +35,7 @@
         	<div class="form-group">
         		<label>Pilih Status</label>
         		<select name="status" id="dd_edit_status" class="form-control">
+        			<option>--Pilih Status--</option>
         			<option>Acc</option>
         			<option>Revisi</option>
         			

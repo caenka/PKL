@@ -35,6 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 												<th>File</th>
 												<th>Status</th>
 												<th>Aksi</th>
+												<th>Keterangan</th>
 											</tr>
 											<tr>
 												<td>1</td>
@@ -52,6 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 													<button id="ed_status" class="btn btn-sm btn-info" style="border-radius : 14px">Edit
 														Status</button>
 												</td>
+												<td>hdajja</td>
 											</tr>
 
 										</table>
