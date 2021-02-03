@@ -8,6 +8,6 @@ class Profil extends CI_Controller {
 
 	public function index()
 	{ 
-        $this->load->view("profil");
+        $this->load->view("admin/profil");
 	}
 }
