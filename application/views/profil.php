@@ -26,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										<img alt="image" src="<?php echo base_url('assets/img/avatar/avatar-1.png')?>"
 											class="rounded-circle author-box-picture">
 										<div class="clearfix"></div>
-										<a href="edit_profil" class="btn btn-primary mt-3 primary-btn"><i class="far fa-edit"></i>Edit</a>
+										<a href="#" id="edit_profil" data-bs-toggle="modal" class="btn btn-primary mt-3">edit <i class="far fa-edit"></i></a>
 									</div>
 									<div class="author-box-details">
 										<div class="author-box-name">
@@ -53,6 +53,62 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 
 	<?php $this->load->view('layouts/js.php')?>
+	<script>
+		$('#edit_profil').fireModal({
+			title: 'Edit Profil',
+			center: true,
+			body: `
+			<form id="edit_profil action="<?=base_url().'index.php/admin/profil/'?>" method="POST">
+				<div class="card-body">
+					<div class="row">
+						<div class="form-group ">
+							<label>Nama Lengkap</label>
+							<input type="text" class="form-control" value="" required="">
+							<div class="invalid-feedback">
+								Silahkan isi nama lengkap
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group ">
+							<label>Username</label>
+							<input type="text" class="form-control" value="" required="">
+							<div class="invalid-feedback">
+								Silahkan isi username
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group ">
+							<label>Password</label>
+							<input type="password" class="form-control" value="" required="">
+							<div class="invalid-feedback">
+								Silahkan isi password
+							</div>
+						</div>
+						<div class="form-group col-md-6 col-12">
+							<label>Konfirmasi Password</label>
+							<input type="password" class="form-control" value="" required="">
+							<div class="invalid-feedback">
+								Silahkan isi konfirmasi password
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group ">
+							<label>Bidang</label>
+							<input type="text" class="form-control" value="" required="">
+							<div class="invalid-feedback">
+								Silahkan isi bidang
+							</div>
+						</div>
+					</div>
+				</div>
+				<button class="btn btn-primary" type="submit">Simpan</button>
+			</form>
+		`
+	})
+	</script>
 </body>
 
 </html>
