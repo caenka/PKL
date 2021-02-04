@@ -9,8 +9,9 @@ class Dashboard extends CI_Controller
 
 	public function index()
 	{
-		$data['tb_users'] = $this->db->get_where('tb_users', ['email' => $this->session->set_userdata('email')])->row_array();
-
-		$this->load->view("admin/dashboard");
+		$data['tb_users'] = $this->db->get_where('tb_users', ['email' => $this->session->userdata('email')])->row_array();
+		// var_dump($data);
+		// die;
+		$this->load->view("admin/dashboard", $data);
 	}
 }
