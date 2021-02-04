@@ -37,26 +37,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 											</tr>
 											<tr>
 												<td>1</td>
-												<td>Perihal</td>
-												<td>2017-01-09</td>
-												<td>
-													<img alt="image" src="<?php echo base_url('assets/img/avatar/avatar-5.png')?>"
-														class="rounded-circle" width="35" data-toggle="tooltip">
-												</td>
-												<td>
-													<div class="badge badge-success">Acc</div>
-												</td>
-												<td>
-													<div class="btn-group mb-3" role="group" aria-label="Basic example">
-														<button class="btn btn-primary " id="detail_pengajuan" data-id=""><i class="fas fa-eye"></i></button>
-														<button class="btn btn-primary " id="" data-id=""><i class="fas fa-edit"></i></button>
-														<a href="" class="btn btn-primary" data-confirm="Apakah anda yakin ?|Data yang sudah dihapus tidak dapat dikembalian. Apakah anda ingin melanjutkan?"
-															data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td>2</td>
 												<td>Undangan</td>
 												<td>2017-01-09</td>
 												<td>
@@ -64,19 +44,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 														class="rounded-circle" width="35" data-toggle="tooltip">
 												</td>
 												<td>
-													<div class="badge badge-danger">Revisi</div>
+													<a href="" class="btn btn-danger" id="detail_revisi" data-bs-toggle="modal">Revisi</a>
 												</td>
 												<td>
 													<div class="btn-group mb-3" role="group" aria-label="Basic example">
 														<button class="btn btn-primary " id="detail_pengajuan" data-id=""><i class="fas fa-eye"></i></button>
-														<button class="btn btn-primary " id="" data-id=""><i class="fas fa-edit"></i></button>
 														<a href="" class="btn btn-primary" data-confirm="Apakah anda yakin ?|Data yang sudah dihapus tidak dapat dikembalian. Apakah anda ingin melanjutkan?"
 															data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
 													</div>
 												</td>
 											</tr>
 											<tr>
-												<td>3</td>
+												<td>2</td>
 												<td>Proposal</td>
 												<td>2017-01-09</td>
 												<td>
@@ -87,7 +66,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 												<td>
 													<div class="btn-group mb-3" role="group" aria-label="Basic example">
 														<button class="btn btn-primary " id="detail_pengajuan" data-id=""><i class="fas fa-eye"></i></button>
-														<button class="btn btn-primary " id="" data-id=""><i class="fas fa-edit"></i></button>
 														<a href="" class="btn btn-primary" data-confirm="Apakah anda yakin ?|Data yang sudah dihapus tidak dapat dikembalian. Apakah anda ingin melanjutkan?"
 															data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
 													</div>
@@ -109,6 +87,58 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 
 	<?php $this->load->view('layouts/js.php')?>
+
+	<script>
+  	$('#detail_pengajuan').fireModal({
+  		title: 'Detail Pengajuan',
+  		center: true,
+  		body: `
+			<ul class="list-group">
+			<li class="list-group-item">Judul: </li>
+			<li class="list-group-item">Tanggal: </li>
+			<li class="list-group-item">Status : </li>
+			</ul>
+                        `
+  	})
+  	</script>
+	
+	<script>
+  	$('#detail_revisi').fireModal({
+  		title: 'Revisi Berkas',
+  		center: true,
+  		body: `
+        <form id="edit_status_form" action="<?=base_url().'index.php/bidang/pengajuan/'?>" method="POST">
+				<div class="form-group">
+					<label>Komentar Revisi</label>
+					<textarea name="comment" class="form-control"></textarea>
+        		</div>
+				<div class="form-group">
+					<label>Judul</label>
+					<input name="judu;" type="text" class="form-control">
+				</div>
+				<div class="form-group">
+					<label>File</label>
+					<input name="file" type="file" class="form-control">
+				</div>
+        </form>
+      `,
+  		buttons: [{
+  			text: 'Submit',
+  			class: 'btn btn-primary',
+  			handler: function () {
+  				let form_edit = document.querySelector('#edit_status_form')
+  				form_edit.submit()
+  			}
+  		}, {
+  			text: 'Tutup',
+  			class: 'btn btn-danger',
+  			handler: function (current_modal) {
+  				$.destroyModal(current_modal)
+  			}
+  		}]
+  	})
+   </script>
+
 </body>
 
 </html>

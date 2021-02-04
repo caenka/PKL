@@ -11,11 +11,9 @@ class KelolaAkun extends CI_Controller
 
 	public function index()
 	{
-		// $data['tb_users'] = $this->db->get_where('tb_users', ['email' => $this->session->userdata('email')])->row_array();
-		// $data['tb_users'] = $this->session->userdata('name');
-		// $data['tb_users'] = $this->session->userdata('name');
+
 		$user['tb_users'] = $this->Admin_model->getdataUser();
-		// $variabel = array_push($user, $data);
+
 		// print_r($variabel);
 		// die;
 

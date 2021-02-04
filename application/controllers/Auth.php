@@ -40,6 +40,8 @@ class Auth extends CI_Controller
                     // print_r($data);
                     // die;
                     $this->session->set_userdata($data);
+                    // var_dump($_SESSION);
+                    // die;
                     if ($user['role_id'] == 1) {
                         redirect('admin/Dashboard');
                     } else {
