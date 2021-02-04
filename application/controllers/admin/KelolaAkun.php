@@ -6,13 +6,20 @@ class KelolaAkun extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->library('form_validation');
+		$this->load->model('Admin_model');
 	}
 
 	public function index()
 	{
-		$data['tb_users'] = $this->db->get_where('tb_users', ['email' => $this->session->userdata('email')])->row_array();
+		// $data['tb_users'] = $this->db->get_where('tb_users', ['email' => $this->session->userdata('email')])->row_array();
+		// $data['tb_users'] = $this->session->userdata('name');
+		// $data['tb_users'] = $this->session->userdata('name');
+		$user['tb_users'] = $this->Admin_model->getdataUser();
+		// $variabel = array_push($user, $data);
+		// print_r($variabel);
+		// die;
 
-		$this->load->view("admin/kelolaAkun", $data);
+		$this->load->view("admin/kelolaAkun", $user);
 	}
 
 	public function addAkun()
