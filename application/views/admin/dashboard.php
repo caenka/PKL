@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,8 +9,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div id="app">
 		<div class="main-wrapper">
 			<div class="navbar-bg"></div>
-			<?php $this->load->view('layouts/navbar.php')?>
-			<?php $this->load->view('admin/_partials/sidebar.php')?>
+			<?php $this->load->view('layouts/navbar.php') ?>
+			<?php $this->load->view('admin/_partials/sidebar.php') ?>
 			<!-- Main Content -->
 			<div class="main-content">
 				<section class="section">
@@ -69,7 +69,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div>
 	</div>
 
-	<?php $this->load->view("layouts/js.php")?>
+	<?php $this->load->view("layouts/js.php") ?>
 </body>
 
 </html>
