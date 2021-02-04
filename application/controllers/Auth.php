@@ -33,12 +33,13 @@ class Auth extends CI_Controller
             if ($user['is_active'] == 1) {
                 if (password_verify($password, $user['password'])) {
                     $data = [
+                        'name' => $user['name'],
                         'email' => $user['email'],
                         'role_id' => $user['role_id'],
                     ];
-                    $this->session->set_userdata($data);
-                    // var_dump($_SESSION);
+                    // print_r($data);
                     // die;
+                    $this->session->set_userdata($data);
                     if ($user['role_id'] == 1) {
                         redirect('admin/Dashboard');
                     } else {

@@ -36,21 +36,25 @@ defined('BASEPATH') or exit('No direct script access allowed');
 												<th>No</th>
 												<th>Nama</th>
 												<th>Username</th>
-												<th>Password</th>
+												<!-- <th>Password</th> -->
 												<th>Bidang</th>
 												<th>Aksi</th>
 											</tr>
-											<tr>
-												<td>1</td>
-												<td>Jono</td>
-												<td>Jono123</td>
-												<td>123123</td>
-												<td>TIK</td>
-												<td>
-													<a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></a>
-													<a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
-												</td>
-											</tr>
+											<?php
+											$no = 1;
+											foreach ($tb_users as $usr) :
+											?>
+												<tr>
+													<td><?= $no++ ?></td>
+													<td><?= $usr->name ?></td>
+													<td><?= $usr->email ?></td>
+													<td><?= $usr->bidang ?></td>
+													<td>
+														<a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></a>
+														<a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
+													</td>
+												</tr>
+											<?php endforeach ?>
 										</table>
 									</div>
 								</div>
