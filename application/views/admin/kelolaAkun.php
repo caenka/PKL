@@ -26,7 +26,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<div class="col-12">
 							<div class="card">
 								<div class="card-header">
-									<h4>Tabel Akun</h4>
+									<a href="#" id="tambah_akun" data-bs-toggle="modal" class="btn btn-primary">Tambah Akun</a>
 								</div>
 
 								<div class="card-body">
@@ -65,7 +65,44 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	</div>
 	</div>
 
-	<?php $this->load->view('layouts/js.php') ?>
+	<?php $this->load->view('layouts/js.php')?>
+
+
+
+	<script>
+		$('#edit_akun').fireModal({
+			title: 'Edit Akun',
+			center: true,
+			body: `
+			<form id="edit_status_form" action="<?=base_url().'index.php/admin/kelolaAkun/'?>" method="POST">
+				<div class="form-group">
+					<label>Nama Lengkap</label>
+					<input name="nama" type="text" class="form-control">
+				</div>
+				<div class="form-group">
+					<label>Username</label>
+					<input name="username" type="text" class="form-control">
+				</div>
+				<div class="form-group">
+					<label>Password</label>
+					<input name="password" type="password" class="form-control">
+				</div>
+				<div class="form-group">
+					<label>Pilih Bidang</label>
+					<select name="bidang" id="" class="form-control">
+						<option>--Pilih Bidang--</option>
+						<option>TI</option>
+						<option>IKP</option>
+						<option>Statistika Sandi</option>
+						<option>Kesekretariatan</option>
+					</select>
+				</div>
+
+				<button class="btn btn-primary" type="submit">Simpan</button>
+			</form>
+		`
+	})
+	</script>
 </body>
 <!-- Button trigger modal -->
 

@@ -30,21 +30,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 											<tr>
 												<th>No</th>
 												<th>Judul</th>
-												<th>Tanggal</th>
+												<th>Tanggal Pengajuan</th>
+												<th>Tanggal Acc</th>
 												<th>Bidang</th>
-												<th>File</th>
-												<th>Deskripsi</th>
+												<th>Berkas</th>
+												<th>Berkas Acc</th>
 											</tr>
 											<tr>
 												<td>1</td>
 												<td>Perihal Undangan</td>
 												<td>2017-01-09</td>
+												<td>2017-01-10</td>
 												<td>TIK</td>
 												<td>
 													<img alt="image" src="<?php echo base_url('assets/img/avatar/avatar-5.png')?>"
 														class="rounded-circle" width="35" data-toggle="tooltip">
 												</td>
-												<td>File blbalbalbalabla</td>
+												<td>
+													<img alt="image" src="<?php echo base_url('assets/img/avatar/avatar-2.png')?>"
+														class="rounded-circle" width="35" data-toggle="tooltip">
+												</td>
 											</tr>
 										</table>
 									</div>

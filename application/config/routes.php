@@ -53,9 +53,8 @@ $route['default_controller'] = 'auth';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['admin/profil'] ='profil';
-$route['bidang/profil'] ='profil';
-$route['admin/edit_profil'] = 'editProfil';
+$route['admin/profil'] ='admin/profil';
+$route['bidang/profil'] ='bidang/profil';
 
 $route['admin/dashboard'] = 'admin/dashboard';
 $route['admin/pengajuan'] = 'admin/pengajuan';
