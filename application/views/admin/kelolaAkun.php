@@ -26,7 +26,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 						<div class="col-12">
 							<div class="card">
 								<div class="card-header">
-									<h4>Tabel Akun</h4>
+									<a href="#" id="tambah_akun" data-bs-toggle="modal" class="btn btn-primary">Tambah Akun</a>
 								</div>
 
 								<div class="card-body">
@@ -69,7 +69,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 	</div>
 	</div>
 
-	<?php $this->load->view('layouts/js.php') ?>
+	<?php $this->load->view('layouts/js.php')?>
+
+
+
+
 </body>
 <!-- Button trigger modal -->
 

@@ -38,6 +38,12 @@ class Auth extends CI_Controller
                         'role_id' => $user['role_id'],
                     ];
                     // print_r($data);
+<<<<<<< HEAD
+=======
+                    // die;
+                    $this->session->set_userdata($data);
+                    // var_dump($_SESSION);
+>>>>>>> 88026f3ff94591127c1d053544ce18d8b15dd63e
                     // die;
                     $this->session->set_userdata($data);
                     if ($user['role_id'] == 1) {
