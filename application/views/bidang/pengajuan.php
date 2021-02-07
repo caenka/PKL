@@ -1,16 +1,16 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<?php $this->load->view('layouts/head.php')?>
+<?php $this->load->view('layouts/head.php') ?>
 
 <body>
 	<div id="app">
 		<div class="main-wrapper">
 			<div class="navbar-bg"></div>
-			<?php $this->load->view('layouts/navbar.php')?>
-			<?php $this->load->view('bidang/_partials/sidebar.php')?>
+			<?php $this->load->view('layouts/navbar.php') ?>
+			<?php $this->load->view('bidang/_partials/sidebar.php') ?>
 
 			<!-- Main Content -->
 			<div class="main-content">
@@ -24,6 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<div class="card-header">
 									<a href="tambahPengajuan" class="btn btn-primary">Tambah Berkas Pengajuan</a>
 								</div>
+								<?= $this->session->flashdata('message'); ?>
 								<div class="card-body">
 									<div class="table-responsive">
 										<table class="table table-bordered table-md">
@@ -35,6 +36,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 												<th>Status</th>
 												<th>Aksi</th>
 											</tr>
+<<<<<<< Updated upstream
 											<tr>
 												<td>1</td>
 												<td>Undangan</td>
@@ -72,20 +74,81 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 												</td>
 											</tr>
 
+=======
+											<?php
+											$no = 1;
+											foreach ($pengajuan as $png) :
+											?>
+												<tr>
+													<td><?= $no++ ?></td>
+													<td><?= $png->judul ?></td>
+													<td><?= $png->created_at ?></td>
+													<td>
+														<a href="<?= base_url('uploads/' . $png->file); ?>"><?= $png->file ?></a>
+														<!-- <img alt="image" src="<?php echo base_url('uploads/' . $png->file) ?>" class="rounded-circle" width="35" data-toggle="tooltip"> -->
+													</td>
+													<td>
+														<div class="badge badge-success"><?= $png->status ?></div>
+													</td>
+													<td>
+														<div class="btn-group mb-3" role="group" aria-label="Basic example">
+															<button class="btn btn-primary " id="detail_pengajuan" data-id=""><i class="fas fa-eye"></i></button>
+															<button class="btn btn-primary " id="" data-id=""><i class="fas fa-edit"></i></button>
+															<a href="" class="btn btn-primary" data-confirm="Apakah anda yakin ?|Data yang sudah dihapus tidak dapat dikembalian. Apakah anda ingin melanjutkan?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>Undangan</td>
+													<td>2017-01-09</td>
+													<td>
+														<img alt="image" src="<?php echo base_url('assets/img/avatar/avatar-1.png') ?>" class="rounded-circle" width="35" data-toggle="tooltip">
+													</td>
+													<td>
+														<div class="badge badge-danger">Revisi</div>
+													</td>
+													<td>
+														<div class="btn-group mb-3" role="group" aria-label="Basic example">
+															<button class="btn btn-primary " id="detail_pengajuan" data-id=""><i class="fas fa-eye"></i></button>
+															<button class="btn btn-primary " id="" data-id=""><i class="fas fa-edit"></i></button>
+															<a href="" class="btn btn-primary" data-confirm="Apakah anda yakin ?|Data yang sudah dihapus tidak dapat dikembalian. Apakah anda ingin melanjutkan?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>3</td>
+													<td>Proposal</td>
+													<td>2017-01-09</td>
+													<td>
+														<img alt="image" src="<?php echo base_url('assets/img/avatar/avatar-3.png') ?>" class="rounded-circle" width="35" data-toggle="tooltip">
+													</td>
+													<td>Sedang dalam pengajuan</td>
+													<td>
+														<div class="btn-group mb-3" role="group" aria-label="Basic example">
+															<button class="btn btn-primary " id="detail_pengajuan" data-id=""><i class="fas fa-eye"></i></button>
+															<button class="btn btn-primary " id="" data-id=""><i class="fas fa-edit"></i></button>
+															<a href="" class="btn btn-primary" data-confirm="Apakah anda yakin ?|Data yang sudah dihapus tidak dapat dikembalian. Apakah anda ingin melanjutkan?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
+														</div>
+													</td>
+												</tr>
+											<?php endforeach ?>
+>>>>>>> Stashed changes
 										</table>
 									</div>
 								</div>
-								<?php $this->load->view('layouts/pagination.php')?>
+								<?php $this->load->view('layouts/pagination.php') ?>
 							</div>
 						</div>
 					</div>
 			</div>
 			</section>
 		</div>
-		<?php $this->load->view('layouts/footer.php')?>
+		<?php $this->load->view('layouts/footer.php') ?>
 	</div>
 	</div>
 
+<<<<<<< Updated upstream
 	<?php $this->load->view('layouts/js.php')?>
 
 	<script>
@@ -139,6 +202,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   	})
    </script>
 
+=======
+	<?php $this->load->view('layouts/js.php') ?>
+>>>>>>> Stashed changes
 </body>
 
 </html>

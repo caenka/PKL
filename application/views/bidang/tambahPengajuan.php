@@ -1,16 +1,16 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<?php $this->load->view('layouts/head.php')?>
+<?php $this->load->view('layouts/head.php') ?>
 
 <body>
 	<div id="app">
 		<div class="main-wrapper">
 			<div class="navbar-bg"></div>
-			<?php $this->load->view('layouts/navbar.php')?>
-			<?php $this->load->view('bidang/_partials/sidebar.php')?>
+			<?php $this->load->view('layouts/navbar.php') ?>
+			<?php $this->load->view('bidang/_partials/sidebar.php') ?>
 
 			<!-- Main Content -->
 			<div class="main-content">
@@ -28,39 +28,39 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 					<div class="row">
 						<div class="col-12 col-md-12 col-lg-12">
-							<div class="card">
-								<div class="card-header">
-									<h4>Informasi Berkas</h4>
+							<form action="<?= base_url('bidang/TambahPengajuan/upload') ?>" method="POST" enctype="multipart/form-data">
+								<div class="card">
+									<div class="card-header">
+										<h4>Informasi Berkas</h4>
+									</div>
+									<div class="card-body">
+										<div class="form-group">
+											<label>Judul</label>
+											<input type="text" class="form-control" name="judul" value="<?= set_value('judul') ?>">
+											<?= form_error('judul', '<small class="text-danger">', '</small>') ?>
+										</div>
+										<div class="form-group">
+											<label>File</label>
+											<input type="file" class="form-control" name="filename">
+											<?= form_error('filename', '<small class="text-danger">', '</small>') ?>
+										</div>
+										<div class="card-footer text-right">
+											<button class="btn btn-primary mr-1" type="submit">Submit</button>
+											<button class="btn btn-secondary" type="reset">Reset</button>
+										</div>
+									</div>
 								</div>
-								<div class="card-body">
-									<div class="form-group">
-										<label>Judul</label>
-										<input type="text" class="form-control">
-									</div>
-									<div class="form-group">
-										<label>Tanggal</label>
-										<input type="date" class="form-control">
-									</div>
-									<div class="form-group">
-										<label>File</label>
-										<input type="file" class="form-control">
-									</div>
-									<div class="card-footer text-right">
-										<button class="btn btn-primary mr-1" type="submit">Submit</button>
-										<button class="btn btn-secondary" type="reset">Reset</button>
-									</div>
-								</div>
-							</div>
+							</form>
 						</div>
 					</div>
 			</div>
 			</section>
 		</div>
-		<?php $this->load->view('layouts/footer.php')?>
+		<?php $this->load->view('layouts/footer.php') ?>
 	</div>
 	</div>
 
-	<?php $this->load->view('layouts/js.php')?>
+	<?php $this->load->view('layouts/js.php') ?>
 </body>
 
 </html>
